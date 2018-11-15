@@ -24,5 +24,16 @@ public class Base64Test {
         System.out.println(num1.getBytes());
         System.out.println(num2.getBytes());
         System.out.println(string.getBytes());
+        char a = 'a';
+        int i = 96;
+        //规则1，定义了数据类型的变量与未定义变量的数值，结果自动转换为精度高的
+        System.out.println(2 == 2 ? i : 9.0);
+        //jvm给数值分配的数据类型，98并不是int类型的，而是byte/short，故结果会变为ASCII码98对应的字符
+        System.out.println(2 == 2 ? 98 : a);
+        //规则2，两个已经定义数据类型的变量，结果自动转换为精度高的
+        System.out.println(2 == 2 ? a : i);
+        //规则3，两个未定义的数值，结果自动转换为精度高的
+        System.out.println(2 == 2 ? 99 : 9.0);
+        System.out.println(2 == 2 ? 99 : 'b');
     }
 }
